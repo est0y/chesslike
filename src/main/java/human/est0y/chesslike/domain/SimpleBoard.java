@@ -12,6 +12,8 @@ public class SimpleBoard<CELL, COLOR extends Enum<COLOR>, PIECE_TYPE extends Enu
 
     private final Map<CELL, Piece<COLOR, PIECE_TYPE, STATE>> pieces;
 
+    private final CELL boardSize;
+
     public Optional<Piece<COLOR, PIECE_TYPE, STATE>> getPiece(CELL cell) {
         return Optional.ofNullable(pieces.get(cell));
     }
@@ -22,6 +24,11 @@ public class SimpleBoard<CELL, COLOR extends Enum<COLOR>, PIECE_TYPE extends Enu
 
     public void deletePiece(CELL cell) {
         pieces.remove(cell);
+    }
+
+    @Override
+    public CELL getBoardSize() {
+        return boardSize;
     }
 
     @Override

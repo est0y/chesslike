@@ -11,6 +11,8 @@ public interface Board<CELL, COLOR extends Enum<COLOR>, PIECE_TYPE extends Enum<
 
     void deletePiece(CELL cell);
 
+    CELL getBoardSize();
+
     STRUCTURE getDataStructure();
 
 }
