@@ -1,5 +1,6 @@
 package human.est0y.chesslike.domain;
 
+import human.est0y.chesslike.domain.chess.Square;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Map;
@@ -8,7 +9,7 @@ import java.util.Optional;
 @SuppressWarnings("all")
 @RequiredArgsConstructor
 public class SimpleBoard<CELL, COLOR extends Enum<COLOR>, PIECE_TYPE extends Enum<PIECE_TYPE>, STATE>
-        implements Board<CELL, COLOR, PIECE_TYPE, STATE, Map> {
+        implements Board<CELL, COLOR, PIECE_TYPE, STATE, Map<Square,Piece<COLOR,PIECE_TYPE,STATE>>> {
 
     private final Map<CELL, Piece<COLOR, PIECE_TYPE, STATE>> pieces;
 
